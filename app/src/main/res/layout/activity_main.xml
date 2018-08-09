@@ -35,6 +35,8 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:text="@string/smartTable"
+                android:id="@+id/bt_smart_table"
                 android:layout_width="match_parent"
                 android:textAllCaps="false"
                 android:layout_height="wrap_content"/>
