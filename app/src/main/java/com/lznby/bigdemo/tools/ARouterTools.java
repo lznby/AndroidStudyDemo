@@ -12,4 +12,5 @@ public  class ARouterTools {
     public static final String RxJava2Activity = "/com/lznby/bigdemo/rxjava2/RxJava2Activity";
     public static final String SmartTableActivity = "/com/lznby/bigdemo/smarttable/SmartTableActivity";
     public static final String LaunchActivity = "/com/lznby/bigdemo/LaunchActivity";
+    public static final String WybMainActivity = "/com/wyb/WybMainActivity";
 }
