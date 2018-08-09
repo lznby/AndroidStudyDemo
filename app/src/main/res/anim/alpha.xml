@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<alpha xmlns:android="http://schemas.android.com/apk/res/android"
+       android:duration="3000"
+       android:fillBefore="true"
+       android:fromAlpha="1.0"
+       android:toAlpha="0.1"
+    />
+
+    <!-- alpha功能：渐变透明动画效果 -->
+    <!-- alpha自有属性值说明 -->
+    <!-- fromAlpha：动画开始的透明度，从0.0 ~1.0 ，0.0表示全透明，1.0表示完全不透明 -->
+    <!-- toAlpha：动画结束时的透明度，也是从0.0 ~1.0 ，0.0表示全透明，1.0表示完全不透明 -->
+
+
+    <!-- 从Animation类继继承属性值说明 -->
+    <!-- duration：动画持续时间，以毫秒为单位  -->
+    <!-- fillAfter：如果设置为true，控件动画结束时，将保持动画最后时的状态 -->
+    <!-- fillBefore：如果设置为true,控件动画结束时，还原到开始动画前的状态 -->
+    <!-- fillEnabled：与android:fillBefore 效果相同，都是在动画结束时，将控件还原到初始化状态 -->
+    <!-- repeatCount：动画重复次数 -->
+    <!-- repeatMode：
+         重复类型，有reverse和restart两个值，
+         reverse表示倒序回放，restart表示重新放一遍，
+         必须与repeatCount一起使用才能看到效果。
+         因为这里的意义是重复的类型，即回放时的动作。
+     -->
+    <!-- interpolator：设定插值器，其实就是指定的动作效果，比如弹跳效果等，不在这小节中讲解，后面会单独列出一单讲解。 -->

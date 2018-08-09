@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- animation -->
+
+    <RelativeLayout
+        android:id="@+id/rl_animation"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_animation"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:background="@color/colorAccent"
+            android:text="演示动画"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_animation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <Button
+                android:id="@+id/bt_animation_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="xml属性设置——scale标签——调节尺寸"
+                android:textAllCaps="false"/>
+
+
+            <Button
+                android:id="@+id/bt_animation_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="xml属性设置——alpha标签——调节透明度"
+                android:textAllCaps="false"/>
+
+
+            <Button
+                android:id="@+id/bt_animation_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="xml属性设置——rotate标签——旋转"
+                android:textAllCaps="false"/>
+
+
+            <Button
+                android:id="@+id/bt_animation_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="xml属性设置——translate标签 —— 平移"
+                android:textAllCaps="false"/>
+
+
+            <Button
+                android:id="@+id/bt_animation_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="xml属性设置——set标签——定义动作合集"
+                android:textAllCaps="false"/>
+
+
+            <Button
+                android:id="@+id/bt_animation_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="xml属性设置——interpolator——动画动作效果"
+                android:textAllCaps="false"/>
+
+
+            <Button
+                android:id="@+id/bt_animation_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="使用代码实现scale渐变尺寸伸缩动画效果"
+                android:textAllCaps="false"/>
+
+
+            <Button
+                android:id="@+id/bt_animation_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="使用代码实现alpha渐变透明度动画效果"
+                android:textAllCaps="false"/>
+
+
+            <Button
+                android:id="@+id/bt_animation_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="使用代码实现rotate旋转动画效果"
+                android:textAllCaps="false"/>
+
+
+            <Button
+                android:id="@+id/bt_animation_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="使用代码实现translate画面移动效果"
+                android:textAllCaps="false"/>
+
+
+            <Button
+                android:id="@+id/bt_animation_11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="使用代码实现set动画集合"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="使用代码设置Interpolator插值器"
+                android:textAllCaps="false"/>
+
+
+            <Button
+                android:id="@+id/bt_animation_13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View Animation 不能改变View属性值"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Value Animator 能够改变控件属性值"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Value Animator ofFloat多个值"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Value Animator 常用方法"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Value Animator 两种监听方法"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Value Animator 取消监听方法"
+                android:textAllCaps="false"/>
+
+
+            <Button
+                android:id="@+id/bt_animation_19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Value Animator 设置动画开始延迟时间"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Value Animator clone 克隆"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Value Animator 设置插值器（加速器）"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ValueAnimator 自定义插值器（加速器）"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ValueAnimator 自定义Evaluator（计算器）"
+                android:textAllCaps="false"/>
+
+
+            <Button
+                android:id="@+id/bt_animation_24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ValueAnimator 自定义ArgbEvaluator（颜色计算器）实现控件颜色渐变"
+                android:textAllCaps="false"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

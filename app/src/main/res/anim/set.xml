@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+     android:duration="3000"
+     android:fillAfter="true">
+
+    <alpha
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0"/>
+
+    <scale
+        android:fromXScale="0.0"
+        android:fromYScale="0.0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="1.4"
+        android:toYScale="1.4"/>
+
+    <rotate
+        android:fromDegrees="0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toDegrees="720"/>
+
+    <translate
+        android:fromXDelta="0"
+        android:fromYDelta="0"
+        android:toXDelta="-80"
+        android:toYDelta="-80"/>
+
+</set>
+
+    <!-- set功能：定义动作合集 -->
+    <!-- set标签自已是没有属性的，他的属性都是从Animation继承而来，
+        但当它们用于Set标签时，就会对Set标签下的所有子控件都产生作用。
+    -->
+
+    <!-- 从Animation类继继承属性值说明 -->
+    <!-- duration：动画持续时间，以毫秒为单位  -->
+    <!-- fillAfter：如果设置为true，控件动画结束时，将保持动画最后时的状态 -->
+    <!-- fillBefore：如果设置为true,控件动画结束时，还原到开始动画前的状态 -->
+    <!-- fillEnabled：与android:fillBefore 效果相同，都是在动画结束时，将控件还原到初始化状态 -->
+    <!-- repeatCount：动画重复次数 -->
+    <!-- repeatMode：
+         重复类型，有reverse和restart两个值，
+         reverse表示倒序回放，restart表示重新放一遍，
+         必须与repeatCount一起使用才能看到效果。
+         因为这里的意义是重复的类型，即回放时的动作。
+     -->
+    <!-- interpolator：设定插值器，其实就是指定的动作效果，比如弹跳效果等，不在这小节中讲解，后面会单独列出一单讲解。 -->
