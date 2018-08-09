@@ -29,4 +29,5 @@ task clean(type: Delete) {
 // 与build.gradle 文件相关  相当于静态常量值 集中进行第三方库的版本控制
 ext{
     support_version = "27.1.1"
+    retrofit = "2.4.0"
 }
