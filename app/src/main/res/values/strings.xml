@@ -1,9 +1,12 @@
 <resources>
-    <string name="app_name">Android 学习笔记</string>
+    <string name="app_name">Android</string>
     <string name="bt_retrofit2">retrofit2</string>
     <string name="bt_animation">animation</string>
     <string name="bt_rxjava2">rxjava2</string>
     <string name="bt_FlowabkeSubscriber">RxJava2 FlowableSubscriber</string>
     <string name="flowablesubscript_actions">flowableSubscript Actions</string>
     <string name="observablesubscript">ObservableSubscript</string>
+    <string name="smartTable">SmartTable</string>
+    <string name="lznby_demo">Lznby的Demo</string>
+    <string name="codedog_demo">codeDog 的 Demo</string>
 </resources>

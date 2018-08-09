@@ -13,17 +13,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".retrofit.Retrofit2Activity">
         </activity>
         <activity android:name=".animation.AnimationActivity">
         </activity>
         <activity android:name=".rxjava2.RxJava2Activity">
+        </activity>
+        <activity android:name=".smarttable.SmartTableActivity">
+        </activity>
+        <activity android:name=".LaunchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 

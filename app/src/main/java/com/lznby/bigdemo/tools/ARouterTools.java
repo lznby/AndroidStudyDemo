@@ -10,4 +10,6 @@ public  class ARouterTools {
     public static final String Retrofit2Activity = "/com/lznby/bigdemo/retrofit/Retrofit2Activity";
     public static final String AnimationActivity = "/com/lznby/bigdemo/animation/AnimationActivity";
     public static final String RxJava2Activity = "/com/lznby/bigdemo/rxjava2/RxJava2Activity";
+    public static final String SmartTableActivity = "/com/lznby/bigdemo/smarttable/SmartTableActivity";
+    public static final String LaunchActivity = "/com/lznby/bigdemo/LaunchActivity";
 }

@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 /**
  * @author Lznby
  * @time 2018/7/7 10:48
- * Class Note: MainActivity
+ * Class Note: Lznby'Demo HomePage
  */
 @Route(path = ARouterTools.MainActivity)
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btAnimation;
     @BindView(R.id.bt_rxjava2)
     Button btRxJava2;
+    @BindView(R.id.bt_smart_table)
+    Button btSmartTable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bt_rxjava2:
                 //启动RxJava2页面
                 ARouter.getInstance().build(ARouterTools.RxJava2Activity).navigation();
+                break;
+            case R.id.bt_smart_table:
+                ARouter.getInstance().build(ARouterTools.SmartTableActivity).navigation();
+                break;
             default:
                 break;
         }
@@ -86,5 +92,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btRetrofit.setOnClickListener(this);
         btAnimation.setOnClickListener(this);
         btRxJava2.setOnClickListener(this);
+        btSmartTable.setOnClickListener(this);
     }
 }
