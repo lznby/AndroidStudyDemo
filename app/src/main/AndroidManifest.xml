@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.lznby.bigdemo">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -30,6 +31,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".wyb.WybMainActivity">
+        </activity>
+        <activity android:name=".wyb.NetworkActivity">
         </activity>
     </application>
 

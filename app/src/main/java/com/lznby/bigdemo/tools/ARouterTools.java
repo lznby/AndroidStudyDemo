@@ -13,4 +13,5 @@ public  class ARouterTools {
     public static final String SmartTableActivity = "/com/lznby/bigdemo/smarttable/SmartTableActivity";
     public static final String LaunchActivity = "/com/lznby/bigdemo/LaunchActivity";
     public static final String WybMainActivity = "/com/wyb/WybMainActivity";
+    public static final String NetworkActivity = WybMainActivity + "/NetworkActivity";
 }

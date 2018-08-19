@@ -3,6 +3,14 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
 
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.lznby.bigdemo.wyb.WybMainActivity"/>
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -18,6 +26,8 @@
                 android:layout_height="wrap_content"/>
 
             <Button
+                android:onClick="onNetworkClick"
+                android:text="玩android 登录封装演示"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -40,7 +50,12 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-
+            <ProgressBar
+                android:progress="30"
+                android:max="100"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
         </LinearLayout>
     </ScrollView>
 </layout>
