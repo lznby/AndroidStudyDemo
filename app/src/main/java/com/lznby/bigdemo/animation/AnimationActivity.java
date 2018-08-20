@@ -13,7 +13,9 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.lznby.bigdemo.R;
+import com.lznby.bigdemo.animation.usejava.ObjectAnimatorDemo;
 import com.lznby.bigdemo.animation.usejava.PropertyAnimator;
+import com.lznby.bigdemo.animation.usejava.SeniorValueAnimator;
 import com.lznby.bigdemo.animation.usejava.TweenAnimation;
 import com.lznby.bigdemo.tools.ARouterTools;
 
@@ -84,6 +86,32 @@ public class AnimationActivity extends AppCompatActivity implements View.OnClick
     Button btAnimation23;
     @BindView(R.id.bt_animation_24)
     Button btAnimation24;
+    @BindView(R.id.bt_animation_25)
+    Button btAnimation25;
+    @BindView(R.id.bt_animation_26)
+    Button btAnimation26;
+    @BindView(R.id.bt_animation_27)
+    Button btAnimation27;
+    @BindView(R.id.bt_animation_28)
+    Button btAnimation28;
+    @BindView(R.id.bt_animation_29)
+    Button btAnimation29;
+    @BindView(R.id.bt_animation_30)
+    Button btAnimation30;
+    @BindView(R.id.bt_animation_31)
+    Button btAnimation31;
+    @BindView(R.id.bt_animation_32)
+    Button btAnimation32;
+    @BindView(R.id.bt_animation_33)
+    Button btAnimation33;
+    @BindView(R.id.bt_animation_34)
+    Button btAnimation34;
+    @BindView(R.id.bt_animation_35)
+    Button btAnimation35;
+    @BindView(R.id.my_point_view)
+    SeniorValueAnimator.MyPointView myPointView;
+    @BindView(R.id.object_my_point_view)
+    ObjectAnimatorDemo.MyPointView1 objectMyPointView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -207,6 +235,50 @@ public class AnimationActivity extends AppCompatActivity implements View.OnClick
                 //自定义ArgbEvaluator（颜色计算器）——实现控件颜色渐变
                 PropertyAnimator.startValueAnimatorCustomArgbEvaluator(tvAnimation);
                 break;
+            case R.id.bt_animation_25:
+                //ValueAnimator ofObject 实现TextView字符变换
+                SeniorValueAnimator.startValueAnimatorCharEvaluator(tvAnimation);
+                break;
+            case R.id.bt_animation_26:
+                //ValueAnimator ofObject 实现自定义参数类型(圆)半径的变化
+                SeniorValueAnimator.startValueAnimatorDrawPoint(myPointView);
+                break;
+            case R.id.bt_animation_27:
+                //ObjectAnimator 改变属性值 alpha 透明度
+                ObjectAnimatorDemo.startObjectAnimatorAlpha(tvAnimation);
+                break;
+            case R.id.bt_animation_28:
+                //ObjectAnimator 改变属性值 rotation 旋转
+                ObjectAnimatorDemo.startObjectAnimatorRotation(tvAnimation);
+                break;
+            case R.id.bt_animation_29:
+                //ObjectAnimator setRotationX 上下旋转(立体)
+                ObjectAnimatorDemo.startObjectAnimatorRotationX(tvAnimation);
+                break;
+            case R.id.bt_animation_30:
+                //ObjectAnimator setRotationY 左右翻转(立体)
+                ObjectAnimatorDemo.startObjectAnimatorRotationY(tvAnimation);
+                break;
+            case R.id.bt_animation_31:
+                //ObjectAnimator setTranslationX (X轴方向平移)
+                ObjectAnimatorDemo.startObjectAnimatorTranslationX(tvAnimation);
+                break;
+            case R.id.bt_animation_32:
+                //ObjectAnimator setTranslationY (Y轴方向平移)
+                ObjectAnimatorDemo.startObjectAnimatorTranslationY(tvAnimation);
+                break;
+            case R.id.bt_animation_33:
+                //ObjectAnimator setScaleX 水平拉伸(缩放)
+                ObjectAnimatorDemo.startObjectAnimatorScaleX(tvAnimation);
+                break;
+            case R.id.bt_animation_34:
+                //ObjectAnimator setScaleY 垂直拉伸(缩放)
+                ObjectAnimatorDemo.startObjectAnimatorScaleY(tvAnimation);
+                break;
+            case R.id.bt_animation_35:
+                //ObjectAnimator 使用自定义ObjectAnimator set方法
+                ObjectAnimatorDemo.doPointViewAnimator(objectMyPointView);
+                break;
             default:
                 break;
         }
@@ -241,6 +313,17 @@ public class AnimationActivity extends AppCompatActivity implements View.OnClick
         btAnimation22.setOnClickListener(this);
         btAnimation23.setOnClickListener(this);
         btAnimation24.setOnClickListener(this);
+        btAnimation25.setOnClickListener(this);
+        btAnimation26.setOnClickListener(this);
+        btAnimation27.setOnClickListener(this);
+        btAnimation28.setOnClickListener(this);
+        btAnimation29.setOnClickListener(this);
+        btAnimation30.setOnClickListener(this);
+        btAnimation31.setOnClickListener(this);
+        btAnimation32.setOnClickListener(this);
+        btAnimation33.setOnClickListener(this);
+        btAnimation34.setOnClickListener(this);
+        btAnimation35.setOnClickListener(this);
     }
 
     /**

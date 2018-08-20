@@ -40,8 +40,9 @@ import com.lznby.bigdemo.utils.LogUtil;
 /**
  * @author Lznby
  * @time 2018/7/16 9:02
- * Class Note: Property Animator（属性动画）
+ * Class Note: Property Animator（属性动画） —ValueAnimator高级进阶（一）
  * Study Note:Property Animator（属性动画）组成：ValueAnimator、ObjectAnimator
+ *
  * Property Animator 功能：
  * 1、ValueAnimator只负责对指定的数字区间进行动画运算
  * 2、我们需要对运算过程进行监听，然后自己对控件做动画操作

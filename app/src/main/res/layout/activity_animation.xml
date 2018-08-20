@@ -18,7 +18,19 @@
             android:layout_height="60dp"
             android:layout_centerInParent="true"
             android:background="@color/colorAccent"
+            android:gravity="center"
             android:text="演示动画"/>
+
+        <!-- 自定义圆形View -->
+        <view class="com.lznby.bigdemo.animation.usejava.SeniorValueAnimator$MyPointView"
+            android:id="@+id/my_point_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+
+        <view class="com.lznby.bigdemo.animation.usejava.ObjectAnimatorDemo$MyPointView1"
+            android:id="@+id/object_my_point_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
 
     </RelativeLayout>
 
@@ -213,6 +225,84 @@
                 android:layout_height="wrap_content"
                 android:text="ValueAnimator 自定义ArgbEvaluator（颜色计算器）实现控件颜色渐变"
                 android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ValueAnimator ofObject 实现TextView字符变换"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ValueAnimator ofObject 实现自定义参数类型(圆)半径的变化"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ObjectAnimator 改变属性值 alpha 透明度"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ObjectAnimator 改变属性值 rotation 旋转"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ObjectAnimator setRotationX 上下旋转(立体)"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ObjectAnimator setRotationY 左右翻转(立体)"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ObjectAnimator setTranslationX (X轴方向平移)"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ObjectAnimator setTranslationY (Y轴方向平移)"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_33"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ObjectAnimator setScaleX 水平拉伸(缩放)"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ObjectAnimator setScaleY 垂直拉伸(缩放)"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ObjectAnimator 使用自定义ObjectAnimator set方法"
+                android:textAllCaps="false"/>
+
 
 
         </LinearLayout>
