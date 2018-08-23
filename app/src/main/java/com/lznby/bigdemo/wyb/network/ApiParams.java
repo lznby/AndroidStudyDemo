@@ -6,6 +6,7 @@ import okhttp3.MediaType;
 import okhttp3.RequestBody;
 
 /**
+ * 可以去查一下GsonBuilder 的用法
  * @author Richard_Y_Wang
  * @version $Rev$
  * @des 2018/8/19

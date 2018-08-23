@@ -1,5 +1,7 @@
 package com.lznby.bigdemo.wyb.network;
 
+import android.content.Context;
+
 import com.lznby.bigdemo.BuildConfig;
 
 import java.util.concurrent.TimeUnit;
@@ -12,15 +14,23 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
+ * 利用枚举类型来实现单例设计模式 详情参见
+ * https://blog.csdn.net/normallife/article/details/51152246
+ * https://www.cnblogs.com/cielosun/p/6582333.html
+ *
  * @author Richard_Y_Wang
  * @version $Rev$
- * @des 2018/8/19
+ * @des 2018/8/23
  * @updateAuthor $Author$
  * @updateDes ${TODO}
  */
-public class Temp {
-    public Api provideReadApi(OkHttpClient okHttpClient, UserInterceptor userInterceptor) {
-        OkHttpClient client = okHttpClient.newBuilder()
+public enum ApiUtils {
+
+    INSTANCE;
+
+    public Api getApi(Context context) {
+        UserInterceptor userInterceptor = new UserInterceptor(context);
+        OkHttpClient client = provideOkHttpClient().newBuilder()
                 .addInterceptor(userInterceptor).build();
         return new Retrofit.Builder()
                 .baseUrl(Api.HOST)
@@ -34,7 +44,7 @@ public class Temp {
                 .create(Api.class);
     }
 
-    public OkHttpClient provideOkHttpClient() {
+    private OkHttpClient provideOkHttpClient() {
         OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder()
                 //超时时间
                 .readTimeout(30, TimeUnit.SECONDS)

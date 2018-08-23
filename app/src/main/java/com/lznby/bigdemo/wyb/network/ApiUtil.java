@@ -14,11 +14,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * @author Richard_Y_Wang
  * @version $Rev$
- * @des 2018/8/19
+ * @des 2018/8/23
  * @updateAuthor $Author$
  * @updateDes ${TODO}
  */
-public class Temp {
+public class ApiUtil {
+    
+    
     public Api provideReadApi(OkHttpClient okHttpClient, UserInterceptor userInterceptor) {
         OkHttpClient client = okHttpClient.newBuilder()
                 .addInterceptor(userInterceptor).build();

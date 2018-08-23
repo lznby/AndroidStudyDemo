@@ -25,6 +25,10 @@ import okhttp3.Response;
 public class UserInterceptor implements Interceptor{
     private Context context;
 
+    public UserInterceptor(Context context) {
+        this.context = context;
+    }
+
     @Override
     public Response intercept(@NonNull Chain chain) throws IOException {
         Request request = chain.request();
@@ -47,7 +51,7 @@ public class UserInterceptor implements Interceptor{
         }*/
 
         //看需求进行加请求头的操作 第一次进来的时候首先移除请求头
-        if (isConnection) {
+            if (isConnection) {
             request = request.newBuilder()
                     .removeHeader("Pragma")
                     //                    .addHeader("User-Agent", "android")
@@ -62,8 +66,12 @@ public class UserInterceptor implements Interceptor{
             //设置缓存
             request = request.newBuilder()
                     .cacheControl(CacheControl.FORCE_CACHE)
-                    //.addHeader("User-Agent", "android")
                     .build();
+           /* request = request.newBuilder()
+                    .cacheControl(CacheControl.FORCE_CACHE)
+                    .url(chain.request().url())
+                    //.addHeader("User-Agent", "android")
+                    .build();*/
         }
 
         //不知道这里在干嘛

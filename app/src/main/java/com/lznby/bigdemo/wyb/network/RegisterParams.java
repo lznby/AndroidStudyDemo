@@ -10,6 +10,7 @@ package com.lznby.bigdemo.wyb.network;
 public class RegisterParams extends ApiParams {
     private String username;
     private String password;
+    private String repassword;
 
     public String getUsername() {
         return username;
@@ -25,5 +26,13 @@ public class RegisterParams extends ApiParams {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRepassword() {
+        return repassword;
+    }
+
+    public void setRepassword(String repassword) {
+        this.repassword = repassword;
     }
 }
