@@ -8,4 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="style_input_error">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
 </resources>

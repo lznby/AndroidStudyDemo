@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.lznby.bigdemo.wyb.NetworkActivity"/>
+
+        <variable
+            name="params"
+            type="com.lznby.bigdemo.wyb.network.RegisterParams"/>
+    </data>
+
+    <LinearLayout
+        android:padding="50dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".wyb.NetworkActivity">
+
+        <!--android:textColorHint="@color/little_black"-->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入用户名"
+            android:textSize="16sp"
+            app:counterEnabled="true"
+            app:counterMaxLength="11"
+            app:counterOverflowTextAppearance="@style/style_input_error"
+            app:errorTextAppearance="@style/Theme.AppCompat"
+            app:errorEnabled="true"
+            app:hintAnimationEnabled="true">
+
+            <!-- android:afterTextChanged="@{vm::onInputFinish}"-->
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/input_edit_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawablePadding="14dp"
+                android:text="@={params.username}"
+                android:textColor="@color/black"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            app:errorTextAppearance="@style/Theme.AppCompat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入密码"
+            android:textSize="16sp"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
+            app:counterOverflowTextAppearance="@style/style_input_error"
+            app:errorEnabled="true"
+            app:hintAnimationEnabled="true">
+
+            <!-- android:afterTextChanged="@{vm::onInputFinish}"-->
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawablePadding="14dp"
+                android:text="@={params.password}"
+                android:textColor="@color/black"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            app:errorTextAppearance="@style/Theme.AppCompat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请再次输入密码"
+            android:textSize="16sp"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
+            app:counterOverflowTextAppearance="@style/style_input_error"
+            app:errorEnabled="true"
+            app:hintAnimationEnabled="true">
+
+            <!-- android:afterTextChanged="@{vm::onInputFinish}"-->
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawablePadding="14dp"
+                android:text="@={params.repassword}"
+                android:textColor="@color/black"/>
+        </android.support.design.widget.TextInputLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/rectangle_register_login"
+            android:onClick="@{vm::onRegisterClick}"
+            android:text="注册"
+            android:textColor="#ffffff"
+            android:textSize="16sp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/rectangle_register_login"
+            android:onClick="@{vm::onLoginClick}"
+            android:text="登录"
+            android:textColor="#ffffff"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</layout>

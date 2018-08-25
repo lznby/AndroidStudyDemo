@@ -46,7 +46,7 @@ public class LaunchActivity extends AppCompatActivity {
         btCodeDog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                ARouter.getInstance().build(ARouterTools.WybMainActivity).navigation();
             }
         });
     }
