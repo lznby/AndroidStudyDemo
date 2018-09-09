@@ -12,24 +12,30 @@ import com.lznby.bigdemo.utils.Accessibility;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 /**
  * @author Lznby
  * @time 2018/7/7 10:48
  * Class Note: Lznby'Demo HomePage
  */
 @Route(path = ARouterTools.MainActivity)
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity {
 
     //1.使用黄油刀绑定视图
 
     @BindView(R.id.bt_retrofit)
-    Button btRetrofit;
+    Button mBtRetrofit;
     @BindView(R.id.bt_animation)
-    Button btAnimation;
+    Button mBtAnimation;
     @BindView(R.id.bt_rxjava2)
-    Button btRxJava2;
+    Button mBtRxjava2;
     @BindView(R.id.bt_smart_table)
-    Button btSmartTable;
+    Button mBtSmartTable;
+    @BindView(R.id.bt_fragment)
+    Button mBtFragment;
+    @BindView(R.id.bt_recycle_view)
+    Button mBtRecycleView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,19 +45,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //2.将黄油刀框架绑定到这个Activity上
         ButterKnife.bind(this);
 
-        //3.为Button设置监听
-        initOnClickListener();
     }
 
 
-
     /**
-     * 点击监听事件
-     * @param v
+     * 2.使用黄油刀绑定点击监听事件
+     *
+     * @param view
      */
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
+    @OnClick({R.id.bt_retrofit, R.id.bt_animation, R.id.bt_rxjava2, R.id.bt_smart_table, R.id.bt_fragment,R.id.bt_recycle_view,R.id.bt_ok_http})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
             case R.id.bt_retrofit:
                 //启动retrofit界面
                 ARouter.getInstance().build(ARouterTools.Retrofit2Activity).navigation();
@@ -67,6 +71,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bt_smart_table:
                 ARouter.getInstance().build(ARouterTools.SmartTableActivity).navigation();
                 break;
+            case R.id.bt_fragment:
+                //启动Fragment页面
+                ARouter.getInstance().build(ARouterTools.FragmentUseActivity).navigation();
+                break;
+            case R.id.bt_recycle_view:
+                //启动RecycleView页面
+                ARouter.getInstance().build(ARouterTools.RecycleViewActivity).navigation();
+                break;
+            case R.id.bt_ok_http:
+                //启动OkHttpActivity页面
+                ARouter.getInstance().build(ARouterTools.OkHttpActivity).navigation();
             default:
                 break;
         }
@@ -85,13 +100,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Accessibility.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
     }
 
-    /**
-     * 设置点击事件监听
-     */
-    private void initOnClickListener() {
-        btRetrofit.setOnClickListener(this);
-        btAnimation.setOnClickListener(this);
-        btRxJava2.setOnClickListener(this);
-        btSmartTable.setOnClickListener(this);
-    }
 }

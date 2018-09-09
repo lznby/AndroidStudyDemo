@@ -13,6 +13,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- launch -->
+        <activity android:name=".LaunchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- lznby -->
         <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".retrofit.Retrofit2Activity">
@@ -23,16 +34,29 @@
         </activity>
         <activity android:name=".smarttable.SmartTableActivity">
         </activity>
-        <activity android:name=".LaunchActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+        <activity android:name=".lznby.fragment.control.fragment.CrimeActivity">
         </activity>
+        <activity android:name=".lznby.fragment.FragmentUseActivity">
+        </activity>
+
+        <!-- wyb -->
         <activity android:name=".wyb.WybMainActivity">
         </activity>
         <activity android:name=".wyb.NetworkActivity">
+        </activity>
+        <activity android:name=".lznby.recycleview.RecycleViewActivity">
+        </activity>
+        <activity android:name=".lznby.recycleview.mutilType.MultiTypeRecycleViewActivity">
+        </activity>
+        <activity android:name=".lznby.fragment.control.pager.CrimePagerActivity">
+        </activity>
+        <activity android:name=".lznby.fragment.control.recycleview.CrimeRecycleViewFragmentActivity">
+        </activity>
+        <activity android:name=".lznby.fragment.control.arguments.CrimeArgumentsActivity">
+        </activity>
+        <activity android:name=".lznby.fragment.control.dialog.CrimeDialogFragmentActivity">
+        </activity>
+        <activity android:name=".lznby.okhttp.OkHttpActivity">
         </activity>
     </application>
 

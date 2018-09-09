@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_show"
+        android:text="@string/fragment_base_use"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_long_touch"
+        android:text="@string/buffer_long_touch_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_short_touch"
+        android:text="@string/buffer_short_click_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+</LinearLayout>

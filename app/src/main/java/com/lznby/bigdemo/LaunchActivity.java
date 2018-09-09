@@ -3,14 +3,13 @@ package com.lznby.bigdemo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.lznby.bigdemo.tools.ARouterTools;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * @author Lznby
@@ -19,35 +18,33 @@ import butterknife.ButterKnife;
 @Route(path = ARouterTools.LaunchActivity)
 public class LaunchActivity extends AppCompatActivity {
 
-    @BindView(R.id.bt_lznby)
-    Button btLznby;
-    @BindView(R.id.bt_code_dog)
-    Button btCodeDog;
+    /**
+     * 使用黄油刀绑定多个onClick事件,可以使用插件ButterKnifeZelezny快速生成。
+     * 1.下载安装完插件;
+     * 2.在代码中选中布局id(此处为R.layout.activity_launch)
+     * 3.Alt+Insert
+     * 4.选择Generate ButteKnife Injections
+     * 5.选择需要自动生成的控件及点击事件。
+     * @param view
+     */
+    @OnClick({R.id.bt_lznby, R.id.bt_code_dog})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.bt_lznby:
+                ARouter.getInstance().build(ARouterTools.MainActivity).navigation();
+                break;
+            case R.id.bt_code_dog:
+                ARouter.getInstance().build(ARouterTools.WybMainActivity).navigation();
+                break;
+            default:
+                break;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);
         ButterKnife.bind(this);
-        initView();
-    }
-
-    /**
-     * 初始化控件
-     */
-    private void initView() {
-        btLznby.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ARouter.getInstance().build(ARouterTools.MainActivity).navigation();
-            }
-        });
-
-        btCodeDog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ARouter.getInstance().build(ARouterTools.WybMainActivity).navigation();
-            }
-        });
     }
 }

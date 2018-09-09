@@ -62,10 +62,11 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:4.5.1'
     //Gson
     implementation 'com.google.code.gson:gson:2.8.5'
+    //Moshi(Json解析)
+    implementation 'com.squareup.moshi:moshi:1.6.0'
     //ARouter
     implementation 'com.alibaba:arouter-api:1.3.1'
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
-
     //SmartTable
     implementation 'com.github.huangyanbin:SmartTable:2.2.0'
 

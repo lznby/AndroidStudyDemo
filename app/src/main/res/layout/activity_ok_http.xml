@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:gravity="center"
+        android:text="@string/okhttp_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <ScrollView
+        android:background="@color/backgroundGray"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="@string/show_response"
+                android:id="@+id/tv_show_response"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_synchronous_get"
+                android:text="@string/synchronous_get"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_asynchronous_get"
+                android:text="@string/asynchronous"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_accessing_headers"
+                android:text="@string/accessing_headers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_post_string"
+                android:text="@string/post_a_string"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_post_streaming"
+                android:text="@string/post_streaming"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_post_file"
+                android:text="@string/post_file"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_post_parameters"
+                android:text="@string/posting_form_parameters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_post_multipart"
+                android:text="@string/posting_multipart_request"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_post_parse_json"
+                android:text="@string/parse_a_json_response_with_moshi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_response_caching"
+                android:text="@string/response_caching"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_canceling_call"
+                android:text="@string/canceling_call"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_timeouts"
+                android:text="@string/timeouts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_per_call_configuration"
+                android:text="@string/per_call_configuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_handling_authentication"
+                android:text="@string/handling_authentication"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_application_interceptors"
+                android:text="@string/application_interceptor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_network_interceptors"
+                android:text="@string/network_interceptor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_rewriting_requests"
+                android:text="@string/rewriting_requests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_rewriting_responses"
+                android:text="@string/rewriting_responses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_https_request_1"
+                android:text="@string/https_request_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_https_request_2"
+                android:text="@string/https_request_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_certificate_pinning"
+                android:text="@string/certificate_pinning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_event_listener"
+                android:text="@string/event_listener"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/bt_event_listener_factory"
+                android:text="@string/even_listener_factory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+</LinearLayout>
