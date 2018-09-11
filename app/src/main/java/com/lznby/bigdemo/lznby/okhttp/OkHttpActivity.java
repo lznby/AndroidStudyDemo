@@ -22,6 +22,7 @@ import io.reactivex.schedulers.Schedulers;
  * @author Lznby
  * Note:
  * 1.okhttp的基本使用
+ * 2.参见:https://github.com/square/okhttp/wiki
  */
 @Route(path = ARouterTools.OkHttpActivity)
 public class OkHttpActivity extends AppCompatActivity {
@@ -130,6 +131,7 @@ public class OkHttpActivity extends AppCompatActivity {
             case R.id.bt_https_request_2:
                 //
                 runHttpsRequeset2();
+                break;
             case R.id.bt_certificate_pinning:
                 //
                 runCertificatePinning();
@@ -482,7 +484,7 @@ public class OkHttpActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.newThread())
                 .doOnNext(
                         o-> {
-                            LogginInterceptorTest logginInterceptorTest = new LogginInterceptorTest();
+                            LoginInterceptorTest logginInterceptorTest = new LoginInterceptorTest();
                             try {
                                 response = logginInterceptorTest.applicationInterceptors();
                             } catch (Exception e) {
@@ -505,7 +507,7 @@ public class OkHttpActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.newThread())
                 .doOnNext(
                         o->{
-                            LogginInterceptorTest logginInterceptorTest = new LogginInterceptorTest();
+                            LoginInterceptorTest logginInterceptorTest = new LoginInterceptorTest();
                             try {
                                 response = logginInterceptorTest.networkInterceptors();
                             } catch (Exception e) {
@@ -528,9 +530,9 @@ public class OkHttpActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.newThread())
                 .doOnNext(
                         o-> {
-                            LogginInterceptorTest logginInterceptorTest = new LogginInterceptorTest();
+                            LoginInterceptorTest loginInterceptorTest = new LoginInterceptorTest();
                             try {
-                                response = logginInterceptorTest.rewritingRequest();
+                                response = loginInterceptorTest.rewritingRequest();
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
@@ -551,7 +553,7 @@ public class OkHttpActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.newThread())
                 .doOnNext(
                         o->{
-                            LogginInterceptorTest logginInterceptorTest = new LogginInterceptorTest();
+                            LoginInterceptorTest logginInterceptorTest = new LoginInterceptorTest();
                             try {
                                 response = logginInterceptorTest.rewritingResponse();
                             } catch (Exception e) {

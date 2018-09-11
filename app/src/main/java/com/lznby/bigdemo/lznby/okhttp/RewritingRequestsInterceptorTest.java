@@ -57,7 +57,8 @@ public final class RewritingRequestsInterceptorTest implements Interceptor{
 
             @Override
             public long contentLength() throws IOException {
-                return -1;// We don't know the compressed length in advance!
+                // We don't know the compressed length in advance!
+                return -1;
             }
         };
     }

@@ -16,13 +16,13 @@ import okhttp3.Response;
  * Class Note:
  * 1.Interceptors(拦截器)
  */
-public class LogginInterceptorTest {
+public class LoginInterceptorTest {
 
     /**
      * 拦截器类(实现拦截器接口)
      * 1.这里最要是打印日志功能。
      */
-    class LogginIntrceptor implements Interceptor {
+    class LoggerInterceptor implements Interceptor {
 
         Logger logger = Logger.getAnonymousLogger();
 
@@ -54,7 +54,7 @@ public class LogginInterceptorTest {
         String responseString = new String();
 
         OkHttpClient client = new OkHttpClient.Builder()
-                .addInterceptor(new LogginIntrceptor())
+                .addInterceptor(new LoggerInterceptor())
                 .build();
 
         Request request = new Request.Builder()
@@ -91,7 +91,7 @@ public class LogginInterceptorTest {
         String responseString = new String();
 
         OkHttpClient client = new OkHttpClient.Builder()
-                .addNetworkInterceptor(new LogginIntrceptor())
+                .addNetworkInterceptor(new LoggerInterceptor())
                 .build();
 
         Request request = new Request.Builder()

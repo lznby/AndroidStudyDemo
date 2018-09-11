@@ -1,13 +1,5 @@
 package com.lznby.bigdemo.lznby.okhttp;
 
-/**
- * @author Lznby
- * @time 2018/9/8 20:36
- * Class Note:
- * 1.Https 与 Pinning(证书)
- */
-
-
 import com.lznby.bigdemo.utils.LogUtil;
 
 import java.io.IOException;
@@ -34,6 +26,15 @@ import okhttp3.TlsVersion;
  * 3.COMPATIBLE_TLS is a secure configuration that connects to secure–but not current–HTTPS servers.
  * 4.CLEARTEXT is an insecure configuration that is used for http:// URLs.
  */
+
+/**
+ * @author Lznby
+ * @time 2018/9/8 20:36
+ * Class Note:
+ * 1.Https 与 Pinning(证书)
+ */
+
+
 public class HttpsTest {
 
     /**
