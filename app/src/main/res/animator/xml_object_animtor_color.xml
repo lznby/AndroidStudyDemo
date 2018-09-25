@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 使用xml实现ObjectAnimator之android:valueFrom、android:valueTo的color属性用法 -->
+<objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+                android:propertyName="BackgroundColor"
+                android:duration="5000"
+                android:valueFrom="#ffff00ff"
+                android:valueTo="#ffffff00"
+    />
+
+<!--
+    从效果图中可以看到，虽然实现了颜色变化,但会一直闪;所以直接利用xml实现的动画效果并不
+    怎么好，所以如果想要实现颜色变化，还是利用代码来实现吧。代码实现的话可以参考全局搜索
+    “自定义颜色计算器类”和“ObjectAnimator 使用ArgbEvaluator”即可。
+    一个是对应的是ValueAnimator渐变颜色动画,一个是对应ObjectAnimator渐变颜色动画。
+-->

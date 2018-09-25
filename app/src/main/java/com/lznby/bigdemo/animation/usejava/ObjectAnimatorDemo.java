@@ -1,5 +1,6 @@
 package com.lznby.bigdemo.animation.usejava;
 
+import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -253,6 +254,17 @@ public class ObjectAnimatorDemo {
     public static void doPointViewAnimator(MyPointView1 view) {
         ObjectAnimator animator = ObjectAnimator.ofInt(view,"point",0,100,0);
         animator.setDuration(2000);
+        animator.start();
+    }
+
+    /**
+     * ObjectAnimator 使用ArgbEvaluator
+     * @param view
+     */
+    public static void doBackgroundColorChange(View view) {
+        ObjectAnimator animator = ObjectAnimator.ofInt(view,"BackgroundColor",0xffff00ff,0xffffff00,0xffff00ff);
+        animator.setDuration(8000);
+        animator.setEvaluator(new ArgbEvaluator());
         animator.start();
     }
 

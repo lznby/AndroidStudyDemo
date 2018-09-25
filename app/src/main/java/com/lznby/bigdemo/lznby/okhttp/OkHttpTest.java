@@ -205,8 +205,9 @@ public class OkHttpTest {
             private String factor(int n) {
                 for (int i = 2; i < n; i++) {
                     int x = n / i;
-                    if (x * i == n)
+                    if (x * i == n) {
                         return factor(x) + " × " + i;
+                    }
                 }
                 return Integer.toString(n);
             }
@@ -416,7 +417,8 @@ public class OkHttpTest {
         String responseString = new String();
 
         Request request = new Request.Builder()
-                .url("http://httpbin.org/delay/1")//This Url is served with a 1 second delay.
+                //This Url is served with a 1 second delay.
+                .url("http://httpbin.org/delay/1")
                 .build();
 
         //Copy to customize OkHttp for this request.
@@ -458,7 +460,7 @@ public class OkHttpTest {
                 .build();
 
         Request request = new Request.Builder()
-                .url("https://publicobject.com/helloworld.txt")
+                .url("CCC")
                 .build();
 
         LogUtil.e("Request 1 (new Connection)");

@@ -21,6 +21,13 @@
             android:gravity="center"
             android:text="演示动画"/>
 
+        <com.lznby.bigdemo.animation.AnimatorTextView
+            android:id="@+id/animator_tv_property"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:background="@color/backgroundGray"/>
+
         <!-- 自定义圆形View -->
         <view class="com.lznby.bigdemo.animation.usejava.SeniorValueAnimator$MyPointView"
             android:id="@+id/my_point_view"
@@ -301,6 +308,141 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="ObjectAnimator 使用自定义ObjectAnimator set方法"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ObjectAnimator 使用ArgbEvaluator"
+                android:textAllCaps="false"/>
+
+
+            <Button
+                android:id="@+id/bt_animation_37"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ObjectAnimator 的 PropertyValuesHolder的使用"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_38"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PropertyValuesHolder 之 ofObject的使用"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_39"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PropertyValuesHolder 之 Keyframe(关键帧) 概述"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_40"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Keyframe 之无 Interpolator(插值器)"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_41"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Keyframe 之 Interpolator(插值器)的使用"
+                android:textAllCaps="false"/>
+
+
+            <Button
+                android:id="@+id/bt_animation_42"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AnimatorSet 之 playSequentially(顺序播放动画)"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_43"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AnimatorSet 之 playTogether(同时播放)"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_44"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AnimatorSet 之 playTogether(同时播放) 循环和延时"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AnimatorSet.Builder 自定义顺序动画播放"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_46"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AnimatorSet 设置监听器"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_47"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AnimatorSet 取消动画"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_48"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AnimatorSet与ObjectAnimator中动画设置方法的比较（所有和单个的比较）"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_49"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AnimatorSet与ObjectAnimator中设置动画目标setTarget方法的比较"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_50"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AnimatorSet的延时是仅针对性的延长AnimatorSet激活时间的，对单个动画的延时设置没有影响"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_51"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="使用xml形式实现ValueAnimator"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_52"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="使用xml形式实现ObjectAnimator"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_53"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="使用xml形式实现ObjectAnimator中使用android:valueFrom、android:valueTo的color属性用法"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_animation_54"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="使用xml形式实现AnimatorSet动画"
                 android:textAllCaps="false"/>
 
 

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+                android:propertyName="TranslationY"
+                android:duration="2000"
+                android:valueFrom="0.0"
+                android:valueTo="400.0"
+                android:interpolator="@android:anim/accelerate_interpolator"
+                android:valueType="floatType"
+                android:repeatCount="1"
+                android:repeatMode="reverse"
+                android:startOffset="2000"
+    />
+
+<!--
+    ObjectAnimator所有字段意义及使用方法
+
+    1.完整的字段及意义
+    <objectAnimator
+        android:propertyName = "String"
+        android:duration = "int"
+        android:valueFrom = "float | int | color"
+        android:valueTo = "float | int | color"
+        android:startOffset = "int"
+        android:repeatCount = "int"
+        android:repeatMode = ["repeat" | "reverse"]
+        android:valueType = ["intType" | "floatType"]
+        android:interpolator = ["@android:interpolator/XXX"]
+    />
+
+    android:propertyName：对应属性名，即ObjectAnimator所需要操作的属性名。
+
+    其它字段的意义与animator的意义与取值是一样的，下面再重新列举一下。
+
+    android:duration:每次动画播放的时长
+
+    android:valueFrom:初始动化值；取值范围为float,int和color
+
+    android:valueTo：动画结束值；取值范围同样是float,int和color这三种类型的值
+
+    android:startOffset：动画激活延时；对应代码中的startDelay(long delay)函数
+
+    android:repeatCount：动画重复次数
+
+    android:repeatMode：动画重复模式，取值为repeat和reverse；repeat表示正序重播，reverse表示倒序重播
+
+    android:valueType：表示参数值类型，取值为intType和floatType；与android:valueFrom、android:valueTo相
+    对应。如果这里的取值为intType，那么android:valueFrom、android:valueTo的值也就要对应的是int类型的数值。
+    如果这里的数值是floatType，那么android:valueFrom、android:valueTo的值也要对应的设置为float类型的值。
+    非常注意的是，如果android:valueFrom、android:valueTo的值设置为color类型的值，那么不需要设置这个参数.
+
+    android:interpolator:设置加速器；有关系统加速器所对应的xml值参考res>anim>interpolator.xml中的说明。
+
+    2.加载方式
+    ObjectAnimator animator = (ObjectAnimator) AnimatorInflater.loadAnimator(MyActivity.this,R.animator.color_animator);
+    animator.setTarget(mTv1);
+    animator.start();
+
+-->

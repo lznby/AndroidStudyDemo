@@ -1,5 +1,6 @@
 package com.lznby.bigdemo.animation;
 
+import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.annotation.AnimRes;
@@ -7,20 +8,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.lznby.bigdemo.R;
+import com.lznby.bigdemo.animation.usejava.AnimatorSetByXml;
+import com.lznby.bigdemo.animation.usejava.AnimatorSetDemo;
 import com.lznby.bigdemo.animation.usejava.ObjectAnimatorDemo;
 import com.lznby.bigdemo.animation.usejava.PropertyAnimator;
 import com.lznby.bigdemo.animation.usejava.SeniorValueAnimator;
 import com.lznby.bigdemo.animation.usejava.TweenAnimation;
+import com.lznby.bigdemo.animation.usejava.ValueAndObjectProperty;
 import com.lznby.bigdemo.tools.ARouterTools;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * @author Lznby
@@ -28,86 +32,24 @@ import butterknife.ButterKnife;
  * Class Note: 动画学习
  */
 @Route(path = ARouterTools.AnimationActivity)
-public class AnimationActivity extends AppCompatActivity implements View.OnClickListener {
+public class AnimationActivity extends AppCompatActivity{
 
-    //Value Animator
-
+    /**
+     * Value Animator
+     */
     ValueAnimator valueAnimator = new ValueAnimator();
+
+    /**
+     * 用于取消animatorSet动画
+     */
+    AnimatorSet animatorSet;
 
     //1.使用黄油刀绑定视图
 
     @BindView(R.id.tv_animation)
     TextView tvAnimation;
-    @BindView(R.id.bt_animation_1)
-    Button btAnimation1;
-    @BindView(R.id.bt_animation_2)
-    Button btAnimation2;
-    @BindView(R.id.bt_animation_3)
-    Button btAnimation3;
-    @BindView(R.id.bt_animation_4)
-    Button btAnimation4;
-    @BindView(R.id.bt_animation_5)
-    Button btAnimation5;
-    @BindView(R.id.bt_animation_6)
-    Button btAnimation6;
-    @BindView(R.id.bt_animation_7)
-    Button btAnimation7;
-    @BindView(R.id.bt_animation_8)
-    Button btAnimation8;
-    @BindView(R.id.bt_animation_9)
-    Button btAnimation9;
-    @BindView(R.id.bt_animation_10)
-    Button btAnimation10;
-    @BindView(R.id.bt_animation_11)
-    Button btAnimation11;
-    @BindView(R.id.bt_animation_12)
-    Button btAnimation12;
-    @BindView(R.id.bt_animation_13)
-    Button btAnimation13;
-    @BindView(R.id.bt_animation_14)
-    Button btAnimation14;
-    @BindView(R.id.bt_animation_15)
-    Button btAnimation15;
-    @BindView(R.id.bt_animation_16)
-    Button btAnimation16;
-    @BindView(R.id.bt_animation_17)
-    Button btAnimation17;
-    @BindView(R.id.bt_animation_18)
-    Button btAnimation18;
-    @BindView(R.id.bt_animation_19)
-    Button btAnimation19;
-    @BindView(R.id.bt_animation_20)
-    Button btAnimation20;
-    @BindView(R.id.bt_animation_21)
-    Button btAnimation21;
-    @BindView(R.id.bt_animation_22)
-    Button btAnimation22;
-    @BindView(R.id.bt_animation_23)
-    Button btAnimation23;
-    @BindView(R.id.bt_animation_24)
-    Button btAnimation24;
-    @BindView(R.id.bt_animation_25)
-    Button btAnimation25;
-    @BindView(R.id.bt_animation_26)
-    Button btAnimation26;
-    @BindView(R.id.bt_animation_27)
-    Button btAnimation27;
-    @BindView(R.id.bt_animation_28)
-    Button btAnimation28;
-    @BindView(R.id.bt_animation_29)
-    Button btAnimation29;
-    @BindView(R.id.bt_animation_30)
-    Button btAnimation30;
-    @BindView(R.id.bt_animation_31)
-    Button btAnimation31;
-    @BindView(R.id.bt_animation_32)
-    Button btAnimation32;
-    @BindView(R.id.bt_animation_33)
-    Button btAnimation33;
-    @BindView(R.id.bt_animation_34)
-    Button btAnimation34;
-    @BindView(R.id.bt_animation_35)
-    Button btAnimation35;
+    @BindView(R.id.animator_tv_property)
+    AnimatorTextView mAnimatorTextView;
     @BindView(R.id.my_point_view)
     SeniorValueAnimator.MyPointView myPointView;
     @BindView(R.id.object_my_point_view)
@@ -121,14 +63,36 @@ public class AnimationActivity extends AppCompatActivity implements View.OnClick
         //2.将黄油刀框架绑定到这个Activity上
         ButterKnife.bind(this);
 
-        //设置监听
-        initOnClickListener();
     }
 
+    /**
+     * 使用xml方式设置动画的方法
+     *
+     * @param view 设置动画的视图
+     * @param id   设置动画的xml
+     */
+    private void startAnimation(View view, @AnimRes int id) {
+        Animation animation = AnimationUtils.loadAnimation(this, id);
+        view.startAnimation(animation);
+    }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
+    @OnClick({R.id.bt_animation_1, R.id.bt_animation_2, R.id.bt_animation_3, R.id.bt_animation_4,
+            R.id.bt_animation_5, R.id.bt_animation_6, R.id.bt_animation_7, R.id.bt_animation_8,
+            R.id.bt_animation_9, R.id.bt_animation_10, R.id.bt_animation_11, R.id.bt_animation_12,
+            R.id.bt_animation_13, R.id.bt_animation_14, R.id.bt_animation_15, R.id.bt_animation_16,
+            R.id.bt_animation_17, R.id.bt_animation_18, R.id.bt_animation_19, R.id.bt_animation_20,
+            R.id.bt_animation_21, R.id.bt_animation_22, R.id.bt_animation_23, R.id.bt_animation_24,
+            R.id.bt_animation_25, R.id.bt_animation_26, R.id.bt_animation_27, R.id.bt_animation_28,
+            R.id.bt_animation_29, R.id.bt_animation_30, R.id.bt_animation_31, R.id.bt_animation_32,
+            R.id.bt_animation_33, R.id.bt_animation_34, R.id.bt_animation_35, R.id.bt_animation_36,
+            R.id.bt_animation_37, R.id.bt_animation_38, R.id.bt_animation_39, R.id.bt_animation_40,
+            R.id.bt_animation_41, R.id.bt_animation_42, R.id.bt_animation_43, R.id.bt_animation_44,
+            R.id.bt_animation_45, R.id.bt_animation_46, R.id.bt_animation_47, R.id.bt_animation_48,
+            R.id.bt_animation_49, R.id.bt_animation_50, R.id.bt_animation_51, R.id.bt_animation_52,
+            R.id.bt_animation_53, R.id.bt_animation_54, R.id.tv_animation
+    })
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
             case R.id.tv_animation:
                 //为animation设置点击事件
                 Toast.makeText(this, "我被点击了！", Toast.LENGTH_SHORT).show();
@@ -279,61 +243,84 @@ public class AnimationActivity extends AppCompatActivity implements View.OnClick
                 //ObjectAnimator 使用自定义ObjectAnimator set方法
                 ObjectAnimatorDemo.doPointViewAnimator(objectMyPointView);
                 break;
+            case R.id.bt_animation_36:
+                //ObjectAnimator 使用 ArgbEvaluator
+                //ObjectAnimator的函数都是从ValueAnimator中继承而来的，所以用法和效果与ValueAnimator是完全一样的.
+                ObjectAnimatorDemo.doBackgroundColorChange(tvAnimation);
+                break;
+            case R.id.bt_animation_37:
+                //ObjectAnimator PropertyValuesHolder的使用
+                ValueAndObjectProperty.doPropertyValuesAnimator(tvAnimation);
+                break;
+            case R.id.bt_animation_38:
+                //PropertyValueHolder 之 ofObject 的使用
+                ValueAndObjectProperty.doOfObjectPropertyHolder(mAnimatorTextView);
+                break;
+            case R.id.bt_animation_39:
+                //PropertyValueHolder 之 KeyFrame 的使用
+                ValueAndObjectProperty.doOfObjectKeyFrame(tvAnimation);
+                break;
+            case R.id.bt_animation_40:
+                //Keyframe 无 Interpolator
+                ValueAndObjectProperty.doNoInterpolatorKeyframeAnimation(tvAnimation);
+                break;
+            case R.id.bt_animation_41:
+                //Keyframe 之使用 Interpolator
+                ValueAndObjectProperty.doInterpolatorKeyframeAnimation(tvAnimation);
+                break;
+            case R.id.bt_animation_42:
+                //AnimatorSet 之 playSequentially(顺序播放动画)
+                AnimatorSetDemo.doAnimatorSetPlaySequentially(tvAnimation,mAnimatorTextView);
+                break;
+            case R.id.bt_animation_43:
+                //AnimatorSet 之 playTogether(同时播放)
+                AnimatorSetDemo.doAnimatorSetPlayTogether(tvAnimation,mAnimatorTextView);
+                break;
+            case R.id.bt_animation_44:
+                //AnimatorSet 之 playTogether(同时播放) 循环与延时
+                AnimatorSetDemo.doAnimatorSetCyclePlay(tvAnimation,mAnimatorTextView);
+                break;
+            case R.id.bt_animation_45:
+                //AnimatorSet.Builder 自定义顺序动画播放
+                AnimatorSetDemo.doAnimatorSetBuilder(tvAnimation,mAnimatorTextView);
+                break;
+            case R.id.bt_animation_46:
+                //AnimatorSet 设置监听
+                animatorSet = AnimatorSetDemo.doAnimatorSetListener(tvAnimation,mAnimatorTextView);
+                break;
+            case R.id.bt_animation_47:
+                //AnimatorSet 取消动画
+                animatorSet.cancel();
+                break;
+            case R.id.bt_animation_48:
+                //AnimatorSet与ObjectAnimator中动画设置方法的比较（所有和单个的比较）
+                AnimatorSetDemo.doAnimatorSetAllAndSingleSetting(tvAnimation,mAnimatorTextView);
+                break;
+            case R.id.bt_animation_49:
+                //AnimatorSet与ObjectAnimator中设置动画目标setTarget方法的比较
+                AnimatorSetDemo.doAnimatorSetSetTarget(tvAnimation,mAnimatorTextView);
+                break;
+            case R.id.bt_animation_50:
+                //AnimatorSet的延时是仅针对性的延长AnimatorSet激活时间的，对单个动画的延时设置没有影响。
+                AnimatorSetDemo.doAnimatorSetSetStartDelay(tvAnimation,mAnimatorTextView);
+                break;
+            case R.id.bt_animation_51:
+                //使用xml形式实现ValueAnimator
+                AnimatorSetByXml.doValueAnimatorByXml(this,tvAnimation);
+                break;
+            case R.id.bt_animation_52:
+                //使用xml形式实现ObjectAnimator
+                AnimatorSetByXml.doObjectAnimatorByXml(this,tvAnimation);
+                break;
+            case R.id.bt_animation_53:
+                //使用xml形式实现ObjectAnimator中使用android:valueFrom、android:valueTo的color属性用法
+                AnimatorSetByXml.doObjectAnimatorColorByXml(this,tvAnimation);
+                break;
+            case R.id.bt_animation_54:
+                //使用xml形式实现AnimatorSet动画
+                AnimatorSetByXml.doAnimatorSetByXml(this,tvAnimation);
             default:
                 break;
         }
-    }
-
-    /**
-     * 设置监听
-     */
-    private void initOnClickListener() {
-        tvAnimation.setOnClickListener(this);
-        btAnimation1.setOnClickListener(this);
-        btAnimation2.setOnClickListener(this);
-        btAnimation3.setOnClickListener(this);
-        btAnimation4.setOnClickListener(this);
-        btAnimation5.setOnClickListener(this);
-        btAnimation6.setOnClickListener(this);
-        btAnimation7.setOnClickListener(this);
-        btAnimation8.setOnClickListener(this);
-        btAnimation9.setOnClickListener(this);
-        btAnimation10.setOnClickListener(this);
-        btAnimation11.setOnClickListener(this);
-        btAnimation12.setOnClickListener(this);
-        btAnimation13.setOnClickListener(this);
-        btAnimation14.setOnClickListener(this);
-        btAnimation15.setOnClickListener(this);
-        btAnimation16.setOnClickListener(this);
-        btAnimation17.setOnClickListener(this);
-        btAnimation18.setOnClickListener(this);
-        btAnimation19.setOnClickListener(this);
-        btAnimation20.setOnClickListener(this);
-        btAnimation21.setOnClickListener(this);
-        btAnimation22.setOnClickListener(this);
-        btAnimation23.setOnClickListener(this);
-        btAnimation24.setOnClickListener(this);
-        btAnimation25.setOnClickListener(this);
-        btAnimation26.setOnClickListener(this);
-        btAnimation27.setOnClickListener(this);
-        btAnimation28.setOnClickListener(this);
-        btAnimation29.setOnClickListener(this);
-        btAnimation30.setOnClickListener(this);
-        btAnimation31.setOnClickListener(this);
-        btAnimation32.setOnClickListener(this);
-        btAnimation33.setOnClickListener(this);
-        btAnimation34.setOnClickListener(this);
-        btAnimation35.setOnClickListener(this);
-    }
-
-    /**
-     * 使用xml方式设置动画的方法
-     *
-     * @param view 设置动画的视图
-     * @param id   设置动画的xml
-     */
-    private void startAnimation(View view, @AnimRes int id) {
-        Animation animation = AnimationUtils.loadAnimation(this, id);
-        view.startAnimation(animation);
     }
 }

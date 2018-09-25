@@ -33,9 +33,10 @@ public class TimeoutsTest {
      *
      * @return
      */
-    public String timeouots() {
+    public String timeouts() {
         Request request = new Request.Builder()
-                .url("http://httpbin.org/delay/2")// This Url is served with a 2 second delay.
+                // This Url is served with a 2 second delay.
+                .url("http://httpbin.org/delay/2")
                 .build();
         try (Response response = client.newCall(request).execute()) {
             LogUtil.e("Response completed:" + response);

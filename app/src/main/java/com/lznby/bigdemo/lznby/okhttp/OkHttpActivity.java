@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.lznby.bigdemo.R;
 import com.lznby.bigdemo.tools.ARouterTools;
+import com.lznby.bigdemo.utils.CacheUtils;
 
 import java.io.File;
 
@@ -369,7 +370,12 @@ public class OkHttpActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.newThread())
                 .doOnNext(
                         o -> {
-                            OkHttpCacheTest okHttpCacheTest = new OkHttpCacheTest(new File("cache.txt"));
+                            //这种方式是直接存放在内部存储器上
+                            OkHttpCacheTest okHttpCacheTest = new OkHttpCacheTest(new File(CacheUtils.getDiskCacheDir(this)));
+                            //这种是缓存到外部的SD卡中,前提是要有SD卡,所有要判断
+//                            OkHttpCacheTest okHttpCacheTest = new OkHttpCacheTest(getExternalCacheDir());
+                            //不要用new File("xxxx")这种方法是有问题的,测试后并没有缓存成
+//                            OkHttpCacheTest okHttpCacheTest = new OkHttpCacheTest(new File("cache.txt"));
                             try {
                                 response = okHttpCacheTest.responseCaching();
                             } catch (Exception e) {
@@ -417,7 +423,7 @@ public class OkHttpActivity extends AppCompatActivity {
                         o -> {
                             TimeoutsTest timeoutsTest = new TimeoutsTest();
                             try {
-                                response = timeoutsTest.timeouots();
+                                response = timeoutsTest.timeouts();
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
