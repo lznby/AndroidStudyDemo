@@ -60,6 +60,6 @@ public class CrimeFragment extends Fragment{
         /**
          * Fragment中需要解绑ButterKnife。
          */
-        mUnbinder = ButterKnife.bind(getActivity());
+        mUnbinder.unbind();
     }
 }

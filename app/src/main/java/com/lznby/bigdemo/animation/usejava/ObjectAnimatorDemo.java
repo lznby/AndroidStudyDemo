@@ -57,12 +57,12 @@ public class ObjectAnimatorDemo {
      *
      * //4、缩放：scaleX、scaleY
      * public void setScaleX(float scaleX)
-     * public void setScaleY(float scaleY
+     * public void setScaleY(float scaleY)
      *
-     * 4.View中已经实现了有关alpha,rotaion,translate,scale相关的set方法。所以我们在构造ObjectAnimator时可以直接使用。
+     * 4.View中已经实现了有关alpha,rotation,translate,scale相关的set方法。所以我们在构造ObjectAnimator时可以直接使用。
      *
      * 特点：
-     * 1、要使用ObjectAnimator来构造对画，要操作的控件中，必须存在对应的属性的set方法
+     * 1、要使用ObjectAnimator来构造动画，要操作的控件中，必须存在对应的属性的set方法
      * 2、setter 方法的命名必须以骆驼拼写法命名，即set后每个单词首字母大写，其余字母小写，即类似于setPropertyName所对应的属性为propertyName
      */
 

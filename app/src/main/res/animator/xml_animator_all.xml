@@ -68,7 +68,7 @@
 
     android:duration:每次动画播放的时长
 
-    android:valueFrom:初始动化值；取值范围为float,int和color
+    android:valueFrom:初始化值；取值范围为float,int和color
 
     android:valueTo：动画结束值；取值范围同样是float,int和color这三种类型的值
 

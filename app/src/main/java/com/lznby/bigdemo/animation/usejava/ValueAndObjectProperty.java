@@ -16,7 +16,7 @@ import com.lznby.bigdemo.animation.AnimatorTextView;
  * Class Note:
  * 1.ValueAnimator和ObjectAnimator的ofPropertyValuesHolder
  * 2.ValueAnimator和ObjectAnimator的ofPropertyValuesHolder使用类似。
- * 3.本类中只讲ObjectAnimator中的ofPropertyValuesHolder的使用,ValueAnimator中该方法使用交少。
+ * 3.本类中只讲ObjectAnimator中的ofPropertyValuesHolder的使用,ValueAnimator中该方法使用较少。
  */
 public class ValueAndObjectProperty {
 
